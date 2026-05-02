@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ContactButton from "@/components/ContactButton";
 
 const projects = [
   {
@@ -59,58 +60,53 @@ const journey = [
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#0b0f1a] px-6 text-white">
-      {/* Background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293722_1px,transparent_1px),linear-gradient(to_bottom,#1f293722_1px,transparent_1px)] bg-[size:48px_48px]" />
-
-      {/* Animated glow */}
-      <div className="absolute left-1/2 top-40 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl [animation:slowFloat_8s_ease-in-out_infinite]" />
-      <div className="absolute right-20 top-[35rem] h-64 w-64 rounded-full bg-violet-500/10 blur-3xl [animation:slowFloatRight_10s_ease-in-out_infinite]" />
       
+      {/* Background grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293730_1px,transparent_1px),linear-gradient(to_bottom,#1f293730_1px,transparent_1px)] bg-[size:40px_40px]" />
+      
+      <div className="absolute left-1/2 top-32 md:top-36 -translate-x-1/2 flex items-center justify-center">
+
+      {/* Core glow (softer) */}
+      <div className="absolute h-40 w-40 rounded-full bg-blue-500/10 blur-2xl" />
+
+      {/* Ripple 1 */}
+      <div className="absolute h-40 w-40 rounded-full border border-blue-400/20 [animation:ripple_5s_linear_infinite]" />
+
+      {/* Ripple 2 */}
+      <div className="absolute h-40 w-40 rounded-full border border-blue-400/15 [animation:ripple_5s_linear_infinite] [animation-delay:1.5s]" />
+
+      {/* Ripple 3 */}
+      <div className="absolute h-40 w-40 rounded-full border border-blue-400/10 [animation:ripple_5s_linear_infinite] [animation-delay:3s]" />
+
+      </div>
+
       {/* Navbar */}
       <nav className="relative z-20 mx-auto flex max-w-6xl items-center justify-between py-6">
-        <Link href="/" className="font-semibold tracking-tight">
-          Omprakash Sahani
+        <Link href="/" className="flex items-center gap-2 font-mono text-sm md:text-base tracking-wide text-gray-300 hover:text-blue-300 transition">
+          <span className="text-blue-400">01</span>
+          <span>· ∇L(θ)</span>
         </Link>
 
-        <div className="flex items-center gap-3">
-          <a
-            href="#projects"
-            className="rounded-lg px-3 py-1.5 text-sm text-gray-400 transition hover:bg-white/5 hover:text-blue-300"
-          >
-            Projects
+        <div className="flex items-center gap-8 text-[15px] md:text-base">
+
+          <a href="#projects" className="font-medium text-gray-200 hover:text-blue-300 transition">
+          Projects
           </a>
 
-          <a
-            href="#journey"
-            className="rounded-lg px-3 py-1.5 text-sm text-gray-400 transition hover:bg-white/5 hover:text-blue-300"
-          >
-            Journey
+          <a href="#journey" className="font-medium text-gray-200 hover:text-blue-300 transition">
+          Journey
           </a>
 
-          <a
-            href="https://github.com/OmprakashSahani"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-gray-300 transition hover:border-blue-400 hover:text-blue-300"
-          >
-            GitHub
+          <a href="https://github.com/OmprakashSahani" className="font-medium text-gray-200 hover:text-blue-300 transition">
+          GitHub
           </a>
 
-          <a
-            href="https://www.linkedin.com/in/omprakashsahani/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-gray-300 transition hover:border-blue-400 hover:text-blue-300"
-          >
-            LinkedIn
+          <a href="https://www.linkedin.com/in/omprakashsahani/" className="font-medium text-gray-200 hover:text-blue-300 transition">
+          LinkedIn
           </a>
 
-          <a
-            href="mailto:Omprakash.Sahani7991@gmail.com"
-            className="rounded-lg border border-blue-400/40 bg-blue-400/10 px-3 py-1.5 text-sm text-blue-300 transition hover:border-blue-300 hover:bg-blue-400/20"
-          >
-            Email
-          </a>
+          <ContactButton />
+          
         </div>
       </nav>
 
