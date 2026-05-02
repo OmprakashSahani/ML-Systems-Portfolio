@@ -1,0 +1,257 @@
+import Link from "next/link";
+
+const projects = [
+  {
+    title: "Autograd Engine",
+    description:
+      "Reverse-mode autodiff engine with dynamic computation graphs and topological backpropagation.",
+    tags: ["Python", "Autograd", "Backpropagation"],
+    link: "/projects/autograd",
+    github: "https://github.com/OmprakashSahani/autograd-engine",
+  },
+  {
+    title: "Distributed Training",
+    description:
+      "Data-parallel training system exploring all-reduce communication and scaling trade-offs.",
+    tags: ["PyTorch", "DDP", "Distributed Systems"],
+    link: "/projects/distributed",
+    github: "https://github.com/OmprakashSahani/distml-core",
+  },
+  {
+    title: "ML Experiment Tracker",
+    description:
+      "CLI-based system for logging, comparing, and visualizing training runs with reproducibility focus.",
+    tags: ["Python", "CLI", "Experiment Tracking"],
+    link: "/projects/tracker",
+    github: "https://github.com/OmprakashSahani/ML-Experiment-Tracker",
+  },
+  {
+    title: "ML Benchmark Suite",
+    description:
+      "Config-driven benchmarking system measuring throughput, latency, and memory usage.",
+    tags: ["Benchmarking", "Performance", "Systems"],
+    link: "/projects/benchmark",
+    github: "https://github.com/OmprakashSahani/ml-benchmark-suite",
+  },
+];
+
+const journey = [
+  {
+    period: "2017 — 2020",
+    title: "Diploma in Computer Engineering",
+    description:
+      "Built foundations in programming, computer systems, electronics, and engineering fundamentals.",
+  },
+  {
+    period: "2020 — 2023",
+    title: "B.Tech in Computer Science and Engineering",
+    description:
+      "Studied core computer science including data structures, operating systems, databases, software engineering, and machine learning fundamentals.",
+  },
+  {
+    period: "2023 — Present",
+    title: "Independent ML Systems Engineering",
+    description:
+      "Building autograd engines, distributed training systems, experiment trackers, and benchmarking tools from first principles.",
+  },
+];
+
+export default function Home() {
+  return (
+    <main className="relative min-h-screen overflow-hidden bg-[#0b0f1a] px-6 text-white">
+      {/* Background grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293722_1px,transparent_1px),linear-gradient(to_bottom,#1f293722_1px,transparent_1px)] bg-[size:48px_48px]" />
+
+      {/* Animated glow */}
+      <div className="absolute left-1/2 top-40 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl [animation:slowFloat_8s_ease-in-out_infinite]" />
+      <div className="absolute right-20 top-[35rem] h-64 w-64 rounded-full bg-violet-500/10 blur-3xl [animation:slowFloatRight_10s_ease-in-out_infinite]" />
+      
+      {/* Navbar */}
+      <nav className="relative z-20 mx-auto flex max-w-6xl items-center justify-between py-6">
+        <Link href="/" className="font-semibold tracking-tight">
+          Omprakash Sahani
+        </Link>
+
+        <div className="flex items-center gap-3">
+          <a
+            href="#projects"
+            className="rounded-lg px-3 py-1.5 text-sm text-gray-400 transition hover:bg-white/5 hover:text-blue-300"
+          >
+            Projects
+          </a>
+
+          <a
+            href="#journey"
+            className="rounded-lg px-3 py-1.5 text-sm text-gray-400 transition hover:bg-white/5 hover:text-blue-300"
+          >
+            Journey
+          </a>
+
+          <a
+            href="https://github.com/OmprakashSahani"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-gray-300 transition hover:border-blue-400 hover:text-blue-300"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/omprakashsahani/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-gray-300 transition hover:border-blue-400 hover:text-blue-300"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="mailto:Omprakash.Sahani7991@gmail.com"
+            className="rounded-lg border border-blue-400/40 bg-blue-400/10 px-3 py-1.5 text-sm text-blue-300 transition hover:border-blue-300 hover:bg-blue-400/20"
+          >
+            Email
+          </a>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="relative z-10 flex min-h-screen items-center justify-center">
+        <div className="max-w-3xl animate-[fadeIn_1s_ease-out] text-center">
+          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
+            Distributed ML · Optimization · Systems
+          </p>
+
+          <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-7xl">
+            Omprakash Sahani
+          </h1>
+
+          <h2 className="mb-6 text-xl text-blue-400 md:text-2xl">
+            ML Systems Engineer
+          </h2>
+
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-400">
+            I build distributed training systems, autograd engines, and
+            performance-focused ML infrastructure from first principles.
+          </p>
+
+          <div className="mt-10 flex justify-center">
+          <a
+            href="#projects"
+            className="rounded-xl bg-blue-400 px-5 py-3 text-sm font-medium text-[#0b0f1a] transition hover:bg-blue-300"
+            >
+            View Selected Work
+          </a>
+        </div>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="relative z-10 mx-auto max-w-6xl pb-28">
+        <div className="mb-10">
+          <p className="mb-3 text-sm uppercase tracking-[0.25em] text-blue-400">
+            Selected Work
+          </p>
+          <h3 className="text-3xl font-semibold md:text-4xl">
+            Systems projects with measurable engineering depth.
+          </h3>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <article
+              key={project.title}
+              className="flex min-h-[300px] flex-col rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-blue-400/70 hover:bg-white/10"
+            >
+              <Link href={project.link} className="flex flex-1 flex-col">
+                <h4 className="mb-3 text-xl font-semibold">{project.title}</h4>
+
+                <p className="mb-6 text-sm leading-relaxed text-gray-400">
+                  {project.description}
+                </p>
+
+                <div className="mt-auto flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-blue-400/30 px-3 py-1 text-xs text-blue-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </Link>
+
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-block text-sm text-blue-400 hover:text-blue-300"
+              >
+                View Code →
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Education / Career Journey */}
+      <section id="journey" className="relative z-10 mx-auto max-w-6xl pb-28">
+        <div className="mb-12">
+          <p className="mb-3 text-sm uppercase tracking-[0.25em] text-blue-400">
+            Journey
+          </p>
+          <h3 className="text-3xl font-semibold md:text-4xl">
+            From computer engineering foundations to ML systems engineering.
+          </h3>
+        </div>
+
+        <div className="relative">
+          {/* Connecting line */}
+          <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-blue-400 via-blue-400/40 to-transparent md:left-1/2" />
+
+          <div className="space-y-12">
+            {journey.map((item, index) => (
+              <div
+                key={item.title}
+                className={`relative grid gap-6 md:grid-cols-2 ${
+                  index % 2 === 0 ? "" : "md:text-right"
+                }`}
+              >
+                {/* Dot */}
+                <div className="absolute left-4 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-blue-400 shadow-[0_0_20px_rgba(96,165,250,0.8)] md:left-1/2" />
+
+                <div
+                  className={`ml-10 md:ml-0 ${
+                    index % 2 === 0 ? "md:pr-12" : "md:col-start-2 md:pl-12"
+                  }`}
+                >
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-blue-400/70 hover:bg-white/10">
+                    <p className="mb-2 text-sm font-medium text-blue-400">
+                      {item.period}
+                    </p>
+
+                    <h4 className="mb-3 text-xl font-semibold">
+                      {item.title}
+                    </h4>
+
+                    <p className="text-sm leading-relaxed text-gray-400">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="relative z-10 mx-auto max-w-6xl border-t border-white/10 py-8 text-sm text-gray-500">
+        <div className="flex flex-col justify-between gap-4 md:flex-row">
+          <p>© 2026 Omprakash Sahani</p>
+          <p>ML Systems · Distributed Training · Optimization</p>
+        </div>
+      </footer>
+    </main>
+  );
+}
