@@ -5,7 +5,7 @@ const projects = [
   {
     title: "Autograd Engine",
     description:
-      "Reverse-mode autodiff engine with dynamic computation graphs and topological backpropagation.",
+      "Built a reverse-mode automatic differentiation engine with dynamic computation graphs and topological backpropagation. Verified gradient correctness through numerical checks and analyzed trade-offs between graph flexibility, memory usage, and execution efficiency.",
     tags: ["Python", "Autograd", "Backpropagation"],
     link: "/projects/autograd",
     github: "https://github.com/OmprakashSahani/autograd-engine",
@@ -41,19 +41,25 @@ const journey = [
     period: "2017 — 2020",
     title: "Diploma in Computer Engineering",
     description:
-      "Built foundations in programming, computer systems, electronics, and engineering fundamentals.",
+      "Built foundational knowledge in programming, data structures, and core system concepts, forming the base for further study in computer science and engineering.",
   },
   {
     period: "2020 — 2023",
     title: "B.Tech in Computer Science and Engineering",
     description:
-      "Studied core computer science including data structures, operating systems, databases, software engineering, and machine learning fundamentals.",
+      "Built strong foundations in computer science, including data structures, operating systems, distributed systems, and machine learning, shaping a systems-oriented approach to problem solving.",
   },
   {
     period: "2023 — Present",
-    title: "Independent ML Systems Engineering",
+    title: "ML Systems Engineering (Independent)",
     description:
-      "Building autograd engines, distributed training systems, experiment trackers, and benchmarking tools from first principles.",
+      "Building distributed training systems, autograd engines, and performance benchmarking tools from first principles.",
+  },
+  {
+  period: "Next",
+  title: "ML Systems Engineering & Research",
+  description:
+    "Moving toward building and studying large-scale machine learning systems, combining distributed systems, optimization, and performance engineering to understand how models behave under real-world constraints.",
   },
 ];
 
@@ -126,8 +132,7 @@ export default function Home() {
           </h2>
 
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-400">
-            I build distributed training systems, autograd engines, and
-            performance-focused ML infrastructure from first principles.
+            I build distributed training systems, autograd engines, and performance-focused ML infrastructure from first principles—analyzing how memory, communication, and compute constraints shape real-world performance.
           </p>
 
           <div className="mt-10 flex justify-center">
@@ -148,7 +153,7 @@ export default function Home() {
             Selected Work
           </p>
           <h3 className="text-3xl font-semibold md:text-4xl">
-            Systems projects with measurable engineering depth.
+            Systems projects exploring performance, scalability, and system-level trade-offs
           </h3>
         </div>
 
@@ -197,7 +202,7 @@ export default function Home() {
             Journey
           </p>
           <h3 className="text-3xl font-semibold md:text-4xl">
-            From computer engineering foundations to ML systems engineering.
+            From foundations to ML systems engineering
           </h3>
         </div>
 
@@ -209,9 +214,7 @@ export default function Home() {
             {journey.map((item, index) => (
               <div
                 key={item.title}
-                className={`relative grid gap-6 md:grid-cols-2 ${
-                  index % 2 === 0 ? "" : "md:text-right"
-                }`}
+                className="relative grid gap-6 md:grid-cols-2"
               >
                 {/* Dot */}
                 <div className="absolute left-4 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-blue-400 shadow-[0_0_20px_rgba(96,165,250,0.8)] md:left-1/2" />
@@ -221,7 +224,14 @@ export default function Home() {
                     index % 2 === 0 ? "md:pr-12" : "md:col-start-2 md:pl-12"
                   }`}
                 >
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-blue-400/70 hover:bg-white/10">
+                <div
+                  className={`rounded-2xl p-6 backdrop-blur transition duration-300 hover:-translate-y-1 ${
+                    index === journey.length - 2
+                      ? "border border-blue-400/40 bg-blue-400/5"
+                      : "border border-white/10 bg-white/5 hover:border-blue-400/70 hover:bg-white/10"
+                  }`}
+                >
+
                     <p className="mb-2 text-sm font-medium text-blue-400">
                       {item.period}
                     </p>
