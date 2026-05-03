@@ -5,8 +5,8 @@ const projects = [
   {
     title: "Autograd Engine",
     description:
-      "Built a reverse-mode automatic differentiation engine with dynamic computation graphs and topological backpropagation. Verified gradient correctness through numerical checks and analyzed trade-offs between graph flexibility, memory usage, and execution efficiency.",
-    tags: ["Python", "Autograd", "Backpropagation"],
+      "Reverse-mode autodiff engine with dynamic computation graphs and topological backpropagation. Verified gradient correctness and analyzed trade-offs between memory usage, execution efficiency, and graph flexibility.",
+    tags: ["Python", "Autograd", "Backpropagation", "Performance"],
     link: "/projects/autograd",
     github: "https://github.com/OmprakashSahani/autograd-engine",
   },
