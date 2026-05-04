@@ -172,8 +172,11 @@ export default function Home() {
               key={project.title}
               className="flex min-h-[300px] flex-col rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-blue-400/70 hover:bg-white/10"
             >
-              <Link href={project.link} className="flex flex-1 flex-col">
-                <h4 className="mb-3 text-xl font-semibold">{project.title}</h4>
+              <Link href={project.link} className="hover:text-blue-300">
+                <h4 className="mb-3 text-xl font-semibold">
+                  {project.title}
+                </h4>
+              </Link>
 
                 <p className="mb-6 text-sm leading-relaxed text-gray-400">
                   {project.description}
@@ -189,8 +192,7 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-              </Link>
-
+                
               <a
                 href={project.github}
                 target="_blank"

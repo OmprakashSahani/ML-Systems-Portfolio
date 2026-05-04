@@ -19,9 +19,13 @@ export default function TrackerPage() {
           Project Case Study
         </p>
 
-        <h1 className="mb-6 text-4xl font-bold md:text-5xl">
+        <h1 className="mb-2 text-4xl font-bold md:text-5xl">
           ML Experiment Tracker
         </h1>
+
+        <p className="mb-6 text-xs text-gray-500">
+          Updated: May 2026
+        </p>
 
         <a
           href="https://github.com/OmprakashSahani/ML-Experiment-Tracker"
@@ -38,7 +42,7 @@ export default function TrackerPage() {
           enabling structured run logging, metric comparison, and evaluation across experiments.
         </p>
 
-        <ul className="mb-8 flex flex-wrap gap-4 text-sm text-gray-400">
+        <ul className="mb-12 flex flex-wrap gap-4 text-sm text-blue-400">
           <li>• Reproducible experiment runs (timestamped)</li>
           <li>• Structured metric logging & comparison</li>
           <li>• CLI-driven workflow for ML experimentation</li>
@@ -96,7 +100,7 @@ export default function TrackerPage() {
           </div>
         </section>
 
-        <p className="mb-12 rounded-2xl border border-blue-400/20 bg-blue-400/5 p-5 text-sm leading-relaxed text-gray-300">
+        <p className="mb-12 rounded-2xl border border-blue-400/20 bg-blue-400/5 backdrop-blur p-5 text-sm leading-relaxed text-gray-300">
           <span className="font-semibold text-blue-300">Takeaway:</span>{" "}
             Effective ML experimentation requires structured tracking, reproducible runs, and reliable metric comparison across configurations.
         </p>

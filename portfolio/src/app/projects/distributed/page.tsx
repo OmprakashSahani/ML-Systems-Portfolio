@@ -19,9 +19,13 @@ export default function DistributedPage() {
           Project Case Study
         </p>
 
-        <h1 className="mb-6 text-4xl font-bold md:text-5xl">
+        <h1 className="mb-2 text-4xl font-bold md:text-5xl">
           Distributed Training Simulator
         </h1>
+
+        <p className="mb-6 text-xs text-gray-500">
+          Updated: May 2026
+        </p>
 
         <a
           href="https://github.com/OmprakashSahani/distml-core"
@@ -39,7 +43,7 @@ export default function DistributedPage() {
           machine learning workloads.
         </p>
 
-        <ul className="mb-8 flex flex-wrap gap-4 text-sm text-gray-400">
+        <ul className="mb-12 flex flex-wrap gap-4 text-sm text-blue-400">
           <li>• ~0.77 efficiency (small models)</li>
           <li>• Compute → communication bound at ~8 workers</li>
           <li>• Negative scaling for large models (1000MB)</li>
@@ -126,7 +130,7 @@ export default function DistributedPage() {
           </div>
         </section>
 
-        <p className="mb-12 rounded-2xl border border-blue-400/20 bg-blue-400/5 p-5 text-sm leading-relaxed text-gray-300">
+        <p className="mb-12 rounded-2xl border border-blue-400/20 bg-blue-400/5 backdrop-blur p-5 text-sm leading-relaxed text-gray-300">
           <span className="font-semibold text-blue-300">Takeaway:</span>{" "}
             Distributed training stops scaling efficiently when communication overhead begins to dominate computation.
         </p>

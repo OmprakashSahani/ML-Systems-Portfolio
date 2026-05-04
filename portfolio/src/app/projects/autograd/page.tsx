@@ -23,9 +23,13 @@ export default function AutogradPage() {
           Project Case Study
         </p>
 
-        <h1 className="mb-6 text-4xl font-bold md:text-5xl">
+        <h1 className="mb-2 text-4xl font-bold md:text-5xl">
           Autograd Engine (From Scratch)
         </h1>
+
+        <p className="mb-6 text-xs text-gray-500">
+          Updated: May 2026
+        </p>
 
         <a
           href="https://github.com/OmprakashSahani/autograd-engine"
@@ -43,7 +47,7 @@ export default function AutogradPage() {
           scalability, and system-level trade-offs in gradient computation.
         </p>
 
-        <ul className="mb-8 flex flex-wrap gap-4 text-sm text-gray-400">
+        <ul className="mb-12 flex flex-wrap gap-4 text-sm text-blue-400">
           <li>• ~1e-10 gradient error</li>
           <li>• Scales to 10,000+ nodes</li>
           <li>• Iterative DFS (no recursion limit)</li>
@@ -118,7 +122,7 @@ export default function AutogradPage() {
           </div>
         </section>
 
-        <p className="mb-12 rounded-2xl border border-blue-400/20 bg-blue-400/5 p-5 text-sm leading-relaxed text-gray-300">
+        <p className="mb-12 rounded-2xl border border-blue-400/20 bg-blue-400/5 backdrop-blur p-5 text-sm leading-relaxed text-gray-300">
           <span className="font-semibold text-blue-300">Takeaway:</span>{" "}
             Autograd performance depends not only on mathematical correctness, but also on graph traversal strategy, memory behavior, and execution overhead.
         </p>
