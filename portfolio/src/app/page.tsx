@@ -13,8 +13,8 @@ const projects = [
   {
     title: "Distributed Training",
     description:
-      "Data-parallel training system exploring all-reduce communication and scaling trade-offs.",
-    tags: ["PyTorch", "DDP", "Distributed Systems"],
+      "Distributed training simulator analyzing scaling efficiency, communication overhead, and system-level bottlenecks across data-parallel workloads.",
+    tags: ["Python", "Distributed Systems", "All-Reduce", "Performance"],
     link: "/projects/distributed",
     github: "https://github.com/OmprakashSahani/distml-core",
   },
