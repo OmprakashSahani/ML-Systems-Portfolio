@@ -135,14 +135,23 @@ export default function Home() {
             I build distributed training systems, autograd engines, and performance-focused ML infrastructure from first principles—analyzing how memory, communication, and compute constraints shape real-world performance.
           </p>
 
-          <div className="mt-10 flex justify-center">
-          <a
-            href="#projects"
-            className="rounded-xl bg-blue-400 px-5 py-3 text-sm font-medium text-[#0b0f1a] transition hover:bg-blue-300"
+          <div className="mt-10 flex justify-center gap-4">
+
+            <a
+              href="#projects"
+              className="rounded-xl bg-blue-400 px-5 py-3 text-sm font-medium text-[#0b0f1a] hover:bg-blue-300 transition"
             >
-            View Selected Work
-          </a>
-        </div>
+              View Selected Work
+            </a>
+
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              className="rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-gray-300 hover:border-blue-400 hover:text-blue-300 transition"
+            >
+              Download Resume
+            </a>
+          </div>
         </div>
       </section>
 
