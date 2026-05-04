@@ -31,7 +31,7 @@ export default function DistributedPage() {
           href="https://github.com/OmprakashSahani/distml-core"
           target="_blank"
           rel="noopener noreferrer"
-          className="mb-6 inline-block text-sm text-blue-400 hover:text-blue-300"
+          className="mb-6 inline-block text-sm text-blue-400 hover:text-blue-300 underline-offset-4 hover:underline transition"
         >
           View Repository →
         </a>

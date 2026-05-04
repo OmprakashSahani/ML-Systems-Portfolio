@@ -156,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="relative z-10 mx-auto max-w-6xl pb-28">
+      <section id="projects" className="relative z-10 mx-auto max-w-6xl -mt-18 pb-28">
         <div className="mb-10">
           <p className="mb-3 text-sm uppercase tracking-[0.25em] text-blue-400">
             Selected Work
@@ -197,7 +197,7 @@ export default function Home() {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-block text-sm text-blue-400 hover:text-blue-300"
+                className="mt-6 inline-block text-sm text-blue-400 hover:text-blue-300 underline-offset-4 hover:underline transition"
               >
                 View Code →
               </a>
@@ -263,11 +263,13 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 mx-auto max-w-6xl border-t border-white/10 py-8 text-sm text-gray-500">
-        <div className="flex flex-col justify-between gap-4 md:flex-row">
-          <p>© 2026 Omprakash Sahani</p>
-          <p>ML Systems · Distributed Training · Optimization</p>
-        </div>
+      <footer className="relative z-10 mx-auto max-w-6xl border-t border-white/10 py-8 text-center">
+        <p className="text-sm text-gray-500">
+          © 2026 Omprakash Sahani
+        </p>
+        <p className="mt-1 text-sm text-gray-600 opacity-80">
+          ML Systems · Distributed Training · Optimization
+        </p>
       </footer>
     </main>
   );
