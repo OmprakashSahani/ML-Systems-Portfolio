@@ -21,8 +21,8 @@ const projects = [
   {
     title: "ML Experiment Tracker",
     description:
-      "CLI-based system for logging, comparing, and visualizing training runs with reproducibility focus.",
-    tags: ["Python", "CLI", "Experiment Tracking"],
+      "CLI-based experiment tracking system for reproducible ML workflows, enabling structured run logging, metric comparison, and evaluation across experiments.",
+    tags: ["Python", "CLI", "Reproducibility", "ML Systems"],
     link: "/projects/tracker",
     github: "https://github.com/OmprakashSahani/ML-Experiment-Tracker",
   },
