@@ -162,7 +162,7 @@ export default function Home() {
             Selected Work
           </p>
           <h3 className="text-3xl font-semibold md:text-4xl">
-            Systems projects exploring performance, scalability, and system-level trade-offs
+            Systems projects focused on performance, scalability, and real-world behavior
           </h3>
         </div>
 

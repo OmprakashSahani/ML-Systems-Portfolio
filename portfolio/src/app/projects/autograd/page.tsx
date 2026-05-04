@@ -27,12 +27,27 @@ export default function AutogradPage() {
           Autograd Engine (From Scratch)
         </h1>
 
+        <a
+          href="https://github.com/OmprakashSahani/autograd-engine"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mb-6 inline-block text-sm text-blue-400 hover:text-blue-300"
+        >
+          View Repository →
+        </a>
+
         {/* Intro */}
         <p className="mb-12 max-w-3xl text-lg leading-relaxed text-gray-400">
           Built a reverse-mode autodiff engine from scratch to understand how
           computation graphs are constructed and executed. Focused on correctness,
           scalability, and system-level trade-offs in gradient computation.
         </p>
+
+        <ul className="mb-8 flex flex-wrap gap-4 text-sm text-gray-400">
+          <li>• ~1e-10 gradient error</li>
+          <li>• Scales to 10,000+ nodes</li>
+          <li>• Iterative DFS (no recursion limit)</li>
+        </ul>
 
         {/* Problem */}
         <section className="mb-12 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6">
@@ -102,6 +117,11 @@ export default function AutogradPage() {
             />
           </div>
         </section>
+
+        <p className="mb-12 rounded-2xl border border-blue-400/20 bg-blue-400/5 p-5 text-sm leading-relaxed text-gray-300">
+          <span className="font-semibold text-blue-300">Takeaway:</span>{" "}
+            Autograd performance depends not only on mathematical correctness, but also on graph traversal strategy, memory behavior, and execution overhead.
+        </p>
 
         {/* Tech Stack */}
         <section className="rounded-2xl border border-blue-400/20 bg-blue-400/5 backdrop-blur p-6">
