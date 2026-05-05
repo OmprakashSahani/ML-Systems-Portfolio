@@ -3,6 +3,14 @@ import ContactButton from "@/components/ContactButton";
 
 const projects = [
   {
+    title: "Distributed Training",
+    description:
+      "Distributed training simulator analyzing scaling efficiency, communication overhead, and system-level bottlenecks across data-parallel workloads.",
+    tags: ["Python", "Distributed Systems", "All-Reduce", "Performance"],
+    link: "/projects/distributed",
+    github: "https://github.com/OmprakashSahani/distml-core",
+  },
+  {
     title: "Autograd Engine",
     description:
       "Reverse-mode autodiff engine with dynamic computation graphs and topological backpropagation. Verified gradient correctness and analyzed trade-offs between memory usage, execution efficiency, and graph flexibility.",
@@ -11,12 +19,12 @@ const projects = [
     github: "https://github.com/OmprakashSahani/autograd-engine",
   },
   {
-    title: "Distributed Training",
-    description:
-      "Distributed training simulator analyzing scaling efficiency, communication overhead, and system-level bottlenecks across data-parallel workloads.",
-    tags: ["Python", "Distributed Systems", "All-Reduce", "Performance"],
-    link: "/projects/distributed",
-    github: "https://github.com/OmprakashSahani/distml-core",
+  title: "ML Reproducibility Auditor",
+  description:
+    "CLI-based ML reproducibility auditor that evaluates repositories for engineering quality, system design patterns, and reproducibility signals using GitHub API analysis.",
+  tags: ["Python", "CLI", "Reproducibility", "ML Systems"],
+  link: "/projects/repro-audit",
+  github: "https://github.com/OmprakashSahani/ml-repro-audit",
   },
   {
     title: "ML Experiment Tracker",
