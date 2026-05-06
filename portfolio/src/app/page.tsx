@@ -3,6 +3,14 @@ import ContactButton from "@/components/ContactButton";
 
 const projects = [
   {
+    title: "Distributed Training Profiler",
+    description:
+      "Systems-oriented profiler for analyzing communication overhead, memory bottlenecks, scaling efficiency, and distributed training behavior in large-scale ML workloads.",
+    tags: ["Python", "Distributed Systems", "Performance", "Memory"],
+    link: "/projects/profiler",
+    github: "https://github.com/OmprakashSahani/dist-training-profiler",
+  },
+  {
     title: "Distributed Training",
     description:
       "Distributed training simulator analyzing scaling efficiency, communication overhead, and system-level bottlenecks across data-parallel workloads.",
