@@ -11,6 +11,14 @@ const projects = [
     github: "https://github.com/OmprakashSahani/dist-training-profiler",
   },
   {
+    title: "Benchmark Guardian",
+    description:
+      "Developer infrastructure platform for automated benchmark regression detection, performance analysis, and GitHub pull request feedback in ML systems and backend workflows.",
+    tags: ["Python", "FastAPI", "GitHub Apps", "Performance"],
+    link: "/projects/benchmark-guardian",
+    github: "https://github.com/OmprakashSahani/benchmark-guardian",
+  },
+  {
     title: "Distributed Training",
     description:
       "Distributed training simulator analyzing scaling efficiency, communication overhead, and system-level bottlenecks across data-parallel workloads.",
@@ -40,16 +48,7 @@ const projects = [
       "CLI-based experiment tracking system for reproducible ML workflows, enabling structured run logging, metric comparison, and evaluation across experiments.",
     tags: ["Python", "CLI", "Reproducibility", "ML Systems"],
     link: "/projects/tracker",
-    github: "https://github.com/OmprakashSahani/ML-Experiment-Tracker",
-  },
-  {
-    title: "ML Benchmark Suite",
-    description:
-      "Config-driven benchmarking system measuring throughput, latency, and memory usage.",
-    tags: ["Benchmarking", "Performance", "Systems"],
-    link: "/projects/benchmark",
-    github: "https://github.com/OmprakashSahani/ml-benchmark-suite",
-  },
+    github: "https://github.com/OmprakashSahani/ML-Experiment-Tracker",  },
 ];
 
 const journey = [
