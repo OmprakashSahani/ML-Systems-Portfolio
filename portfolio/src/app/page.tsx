@@ -3,12 +3,22 @@ import ContactButton from "@/components/ContactButton";
 
 const projects = [
   {
+    title: "Atlas AI",
+    description:
+      "Distributed AI infrastructure platform for transformer systems, inference optimization, scaling analysis, observability, and performance engineering.",
+    tags: ["Python", "Transformers", "Distributed Systems", "Performance"],
+    link: "/projects/atlas-ai",
+    github: "https://github.com/OmprakashSahani/atlas-ai",
+    featured: true,
+  },
+  {
     title: "Distributed Training Profiler",
     description:
       "Systems-oriented profiler for analyzing communication overhead, memory bottlenecks, scaling efficiency, and distributed training behavior in large-scale ML workloads.",
     tags: ["Python", "Distributed Systems", "Performance", "Memory"],
     link: "/projects/profiler",
     github: "https://github.com/OmprakashSahani/dist-training-profiler",
+    featured: true,
   },
   {
     title: "Benchmark Guardian",
@@ -35,12 +45,12 @@ const projects = [
     github: "https://github.com/OmprakashSahani/autograd-engine",
   },
   {
-  title: "ML Reproducibility Auditor",
-  description:
-    "CLI-based ML reproducibility auditor that evaluates repositories for engineering quality, system design patterns, and reproducibility signals using GitHub API analysis.",
-  tags: ["Python", "CLI", "Reproducibility", "ML Systems"],
-  link: "/projects/repro-audit",
-  github: "https://github.com/OmprakashSahani/ml-repro-audit",
+    title: "ML Reproducibility Auditor",
+    description:
+      "CLI-based ML reproducibility auditor that evaluates repositories for engineering quality, system design patterns, and reproducibility signals using GitHub API analysis.",
+    tags: ["Python", "CLI", "Reproducibility", "ML Systems"],
+    link: "/projects/repro-audit",
+    github: "https://github.com/OmprakashSahani/ml-repro-audit",
   },
   {
     title: "ML Experiment Tracker",
@@ -48,7 +58,8 @@ const projects = [
       "CLI-based experiment tracking system for reproducible ML workflows, enabling structured run logging, metric comparison, and evaluation across experiments.",
     tags: ["Python", "CLI", "Reproducibility", "ML Systems"],
     link: "/projects/tracker",
-    github: "https://github.com/OmprakashSahani/ML-Experiment-Tracker",  },
+    github: "https://github.com/OmprakashSahani/ML-Experiment-Tracker",
+  },
 ];
 
 const journey = [
@@ -71,63 +82,71 @@ const journey = [
       "Building distributed training systems, autograd engines, and performance benchmarking tools from first principles.",
   },
   {
-  period: "Next",
-  title: "ML Systems Engineering & Research",
-  description:
-    "Moving toward building and studying large-scale machine learning systems, combining distributed systems, optimization, and performance engineering to understand how models behave under real-world constraints.",
+    period: "Next",
+    title: "ML Systems Engineering & Research",
+    description:
+      "Moving toward building and studying large-scale machine learning systems, combining distributed systems, optimization, and performance engineering to understand how models behave under real-world constraints.",
   },
 ];
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#0b0f1a] px-6 text-white">
-      
       {/* Background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293730_1px,transparent_1px),linear-gradient(to_bottom,#1f293730_1px,transparent_1px)] bg-[size:40px_40px]" />
-      
+
+      {/* Hero ripple */}
       <div className="absolute left-1/2 top-32 md:top-36 -translate-x-1/2 flex items-center justify-center">
-
-      {/* Core glow (softer) */}
-      <div className="absolute h-40 w-40 rounded-full bg-blue-500/10 blur-2xl" />
-
-      {/* Ripple 1 */}
-      <div className="absolute h-40 w-40 rounded-full border border-blue-400/20 [animation:ripple_5s_linear_infinite]" />
-
-      {/* Ripple 2 */}
-      <div className="absolute h-40 w-40 rounded-full border border-blue-400/15 [animation:ripple_5s_linear_infinite] [animation-delay:1.5s]" />
-
-      {/* Ripple 3 */}
-      <div className="absolute h-40 w-40 rounded-full border border-blue-400/10 [animation:ripple_5s_linear_infinite] [animation-delay:3s]" />
-
+        <div className="absolute h-40 w-40 rounded-full bg-blue-500/10 blur-2xl" />
+        <div className="absolute h-40 w-40 rounded-full border border-blue-400/20 [animation:ripple_5s_linear_infinite]" />
+        <div className="absolute h-40 w-40 rounded-full border border-blue-400/15 [animation:ripple_5s_linear_infinite] [animation-delay:1.5s]" />
+        <div className="absolute h-40 w-40 rounded-full border border-blue-400/10 [animation:ripple_5s_linear_infinite] [animation-delay:3s]" />
       </div>
 
       {/* Navbar */}
       <nav className="relative z-20 mx-auto flex max-w-6xl items-center justify-between py-6">
-        <Link href="/" className="flex items-center gap-2 font-mono text-sm md:text-base tracking-wide text-gray-300 hover:text-blue-300 transition">
+        <Link
+          href="/"
+          className="flex items-center gap-2 font-mono text-sm md:text-base tracking-wide text-gray-300 hover:text-blue-300 transition"
+        >
           <span className="text-blue-400">01</span>
           <span>· ∇L(θ)</span>
         </Link>
 
         <div className="flex items-center gap-8 text-[15px] md:text-base">
-
-          <a href="#projects" className="font-medium text-gray-200 hover:text-blue-300 transition">
-          Projects
+          <a
+            href="#projects"
+            className="font-medium text-gray-200 hover:text-blue-300 transition"
+          >
+            Projects
           </a>
 
-          <a href="#journey" className="font-medium text-gray-200 hover:text-blue-300 transition">
-          Journey
+          <a
+            href="#journey"
+            className="font-medium text-gray-200 hover:text-blue-300 transition"
+          >
+            Journey
           </a>
 
-          <a href="https://github.com/OmprakashSahani" className="font-medium text-gray-200 hover:text-blue-300 transition">
-          GitHub
+          <a
+            href="https://github.com/OmprakashSahani"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-gray-200 hover:text-blue-300 transition"
+          >
+            GitHub
           </a>
 
-          <a href="https://www.linkedin.com/in/omprakashsahani/" className="font-medium text-gray-200 hover:text-blue-300 transition">
-          LinkedIn
+          <a
+            href="https://www.linkedin.com/in/omprakashsahani/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-gray-200 hover:text-blue-300 transition"
+          >
+            LinkedIn
           </a>
 
           <ContactButton />
-          
         </div>
       </nav>
 
@@ -147,11 +166,13 @@ export default function Home() {
           </h2>
 
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-400">
-            I build distributed training systems, autograd engines, and performance-focused ML infrastructure from first principles—analyzing how memory, communication, and compute constraints shape real-world performance.
+            I build distributed training systems, autograd engines, and
+            performance-focused ML infrastructure from first principles—analyzing
+            how memory, communication, and compute constraints shape real-world
+            performance.
           </p>
 
           <div className="mt-10 flex justify-center gap-4">
-
             <a
               href="#projects"
               className="rounded-xl bg-blue-400 px-5 py-3 text-sm font-medium text-[#0b0f1a] hover:bg-blue-300 transition"
@@ -162,6 +183,7 @@ export default function Home() {
             <a
               href="/resume.pdf"
               target="_blank"
+              rel="noopener noreferrer"
               className="rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-gray-300 hover:border-blue-400 hover:text-blue-300 transition"
             >
               Download Resume
@@ -171,13 +193,14 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="relative z-10 mx-auto max-w-6xl -mt-18 pb-28">
+      <section id="projects" className="relative z-10 mx-auto max-w-6xl -mt-[4.5rem] pb-28">
         <div className="mb-10">
           <p className="mb-3 text-sm uppercase tracking-[0.25em] text-blue-400">
             Selected Work
           </p>
           <h3 className="text-3xl font-semibold md:text-4xl">
-            Systems projects focused on performance, scalability, and real-world behavior
+            Systems projects focused on performance, scalability, and real-world
+            behavior
           </h3>
         </div>
 
@@ -185,29 +208,39 @@ export default function Home() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="flex min-h-[300px] flex-col rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-blue-400/70 hover:bg-white/10"
+              className={`flex min-h-[300px] flex-col rounded-2xl p-6 backdrop-blur transition duration-300 hover:-translate-y-1 ${
+                project.featured
+                  ? "border border-blue-400/30 bg-blue-400/5 hover:border-blue-400/70 hover:bg-blue-400/10"
+                  : "border border-white/10 bg-white/5 hover:border-blue-400/70 hover:bg-white/10"
+              }`}
             >
+              {project.featured && (
+                <span className="mb-3 inline-block w-fit rounded-full border border-blue-400/30 bg-blue-400/10 px-3 py-1 text-xs text-blue-300">
+                  Featured
+                </span>
+              )}
+
               <Link href={project.link} className="hover:text-blue-300">
                 <h4 className="mb-3 text-xl font-semibold">
                   {project.title}
                 </h4>
               </Link>
 
-                <p className="mb-6 text-sm leading-relaxed text-gray-400">
-                  {project.description}
-                </p>
+              <p className="mb-6 text-sm leading-relaxed text-gray-400">
+                {project.description}
+              </p>
 
-                <div className="mt-auto flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-blue-400/30 px-3 py-1 text-xs text-blue-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                
+              <div className="mt-auto flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-blue-400/30 px-3 py-1 text-xs text-blue-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
               <a
                 href={project.github}
                 target="_blank"
@@ -222,7 +255,7 @@ export default function Home() {
       </section>
 
       {/* Education / Career Journey */}
-      <section id="journey" className="relative z-10 mx-auto max-w-6xl pb-28">
+      <section id="journey" className="relative z-10 mx-auto max-w-6xl -mt-[1.0rem] pb-28">
         <div className="mb-12">
           <p className="mb-3 text-sm uppercase tracking-[0.25em] text-blue-400">
             Journey
@@ -233,7 +266,6 @@ export default function Home() {
         </div>
 
         <div className="relative">
-          {/* Connecting line */}
           <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-blue-400 via-blue-400/40 to-transparent md:left-1/2" />
 
           <div className="space-y-12">
@@ -242,7 +274,6 @@ export default function Home() {
                 key={item.title}
                 className="relative grid gap-6 md:grid-cols-2"
               >
-                {/* Dot */}
                 <div className="absolute left-4 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-blue-400 shadow-[0_0_20px_rgba(96,165,250,0.8)] md:left-1/2" />
 
                 <div
@@ -250,14 +281,13 @@ export default function Home() {
                     index % 2 === 0 ? "md:pr-12" : "md:col-start-2 md:pl-12"
                   }`}
                 >
-                <div
-                  className={`rounded-2xl p-6 backdrop-blur transition duration-300 hover:-translate-y-1 ${
-                    index === journey.length - 2
-                      ? "border border-blue-400/40 bg-blue-400/5"
-                      : "border border-white/10 bg-white/5 hover:border-blue-400/70 hover:bg-white/10"
-                  }`}
-                >
-
+                  <div
+                    className={`rounded-2xl p-6 backdrop-blur transition duration-300 hover:-translate-y-1 ${
+                      index === journey.length - 2
+                        ? "border border-blue-400/40 bg-blue-400/5"
+                        : "border border-white/10 bg-white/5 hover:border-blue-400/70 hover:bg-white/10"
+                    }`}
+                  >
                     <p className="mb-2 text-sm font-medium text-blue-400">
                       {item.period}
                     </p>
@@ -279,9 +309,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="relative z-10 mx-auto max-w-6xl border-t border-white/10 py-8 text-center">
-        <p className="text-sm text-gray-500">
-          © 2026 Omprakash Sahani
-        </p>
+        <p className="text-sm text-gray-500">© 2026 Omprakash Sahani</p>
         <p className="mt-1 text-sm text-gray-600 opacity-80">
           ML Systems · Distributed Training · Optimization
         </p>
