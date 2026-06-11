@@ -6,7 +6,7 @@ export default function ContactButton() {
   const [showEmail, setShowEmail] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const email = "Om.Sahani@icloud.com";
+  const email = "Omprakash.Sahani1206@gmail.com";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
