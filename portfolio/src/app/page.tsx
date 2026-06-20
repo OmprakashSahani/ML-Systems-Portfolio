@@ -181,7 +181,7 @@ export default function Home() {
             </a>
 
             <a
-              href="/resume.pdf"
+              href="/Omprakash Sahani Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-gray-300 hover:border-blue-400 hover:text-blue-300 transition"
