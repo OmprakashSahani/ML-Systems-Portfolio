@@ -1,163 +1,28 @@
+import Image from "next/image";
 import Link from "next/link";
+import CaseStudyShell, { PanelCard } from "@/components/CaseStudyShell";
+import { projectMetadata } from "@/lib/metadata";
+
+export const metadata = projectMetadata("Atlas AI", "Distributed AI infrastructure platform for transformer systems, distributed training, inference optimization, observability, and performance engineering.", "/projects/atlas-ai");
+
+const repositoryLink = <a href="https://github.com/OmprakashSahani/atlas-ai" target="_blank" rel="noopener noreferrer">View Repository →</a>;
 
 export default function AtlasAIPage() {
   return (
-    <main className="relative min-h-screen bg-[#0b0f1a] text-white px-6 py-20 overflow-hidden">
-
-      {/* Background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293730_1px,transparent_1px),linear-gradient(to_bottom,#1f293730_1px,transparent_1px)] bg-[size:40px_40px]" />
-
-      <div className="relative z-10 mx-auto max-w-4xl">
-
-        <Link
-          href="/"
-          className="mb-10 inline-block text-sm text-blue-400 hover:text-blue-300 transition"
-        >
-          ← Back to home
-        </Link>
-
-        <p className="mb-4 text-sm uppercase tracking-[0.25em] text-blue-400">
-          Flagship Systems Platform
-        </p>
-
-        <h1 className="mb-2 text-4xl font-bold md:text-5xl">
-          Atlas AI
-        </h1>
-
-        <p className="mb-6 text-xs text-gray-500">
-          Updated: May 2026
-        </p>
-
-        <a
-          href="https://github.com/OmprakashSahani/atlas-ai"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mb-6 inline-block text-sm text-blue-400 hover:text-blue-300 underline-offset-4 hover:underline transition"
-        >
-          View Repository →
-        </a>
-
-        {/* Intro */}
-        <p className="mb-12 max-w-3xl text-lg leading-relaxed text-gray-400">
-          Built a distributed AI infrastructure platform focused on transformer systems,
-          distributed training behavior, inference optimization, observability,
-          and performance engineering under real systems constraints.
-        </p>
-
-        {/* Highlights */}
-        <ul className="mb-12 flex flex-wrap gap-4 text-sm text-blue-400">
-          <li>• Transformer infrastructure + KV-cache systems</li>
-          <li>• Distributed runtime & communication profiling</li>
-          <li>• Serving, observability, and benchmark automation</li>
-        </ul>
-
-        {/* Problem */}
-        <section className="mb-12 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6">
-          <h2 className="mb-4 text-2xl font-semibold">Problem</h2>
-
-          <p className="text-gray-400 leading-relaxed">
-            Modern AI systems are constrained not only by model quality, but also by
-            communication overhead, memory scaling, inference latency, synchronization cost,
-            and observability limitations. Atlas AI explores these problems through a
-            systems-oriented infrastructure platform.
-          </p>
-        </section>
-
-        {/* System Design */}
-        <section className="mb-12 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6">
-          <h2 className="mb-4 text-2xl font-semibold">System Design</h2>
-
-          <ul className="space-y-3 text-gray-400">
-            <li>• Reverse-mode autograd + optimizer infrastructure</li>
-            <li>• Transformer runtime with KV-cache and streaming generation</li>
-            <li>• Distributed multiprocessing runtime with communication profiling</li>
-            <li>• FastAPI inference server with observability endpoints</li>
-            <li>• Benchmark automation and regression detection workflows</li>
-          </ul>
-        </section>
-
-        {/* Architecture */}
-        <section className="mb-12">
-          <h2 className="mb-4 text-2xl font-semibold">Architecture</h2>
-
-          <p className="mb-6 text-gray-400">
-            Atlas AI integrates training infrastructure, transformer systems,
-            distributed runtimes, serving infrastructure, and observability into a unified ML systems platform.
-          </p>
-
-          <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur p-4">
-            <img
-              src="/images/atlas-architecture.png"
-              alt="Atlas AI architecture"
-              className="w-full rounded-lg"
-              loading="lazy"
-            />
-          </div>
-        </section>
-
-        {/* Results */}
-        <section className="mb-12 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6">
-          <h2 className="mb-4 text-2xl font-semibold">Results & Insights</h2>
-
-          <ul className="space-y-3 text-gray-400">
-            <li>• Observed throughput degradation as autoregressive sequence length increased</li>
-            <li>• Communication profiling exposed scaling bottlenecks in distributed runtimes</li>
-            <li>• KV-cache growth significantly impacted transformer memory behavior</li>
-            <li>• Streaming generation reduced perceived inference latency</li>
-            <li>• Benchmark automation enabled regression-oriented infrastructure validation</li>
-          </ul>
-        </section>
-
-        {/* Benchmark */}
-        <section className="mb-12">
-          <h2 className="mb-4 text-2xl font-semibold">Transformer Benchmark</h2>
-
-          <p className="mb-6 text-gray-400">
-            Transformer generation throughput decreases as token count increases,
-            revealing inference scaling and KV-cache effects.
-          </p>
-
-          <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur p-4">
-            <img
-              src="/images/transformer_generation_benchmark.png"
-              alt="Transformer benchmark"
-              className="w-full rounded-lg"
-              loading="lazy"
-            />
-          </div>
-        </section>
-
-        {/* Demo */}
-        <section className="mb-12">
-          <h2 className="mb-4 text-2xl font-semibold">Serving & Observability</h2>
-
-          <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur p-4">
-            <img
-              src="/images/dashboard-api.png"
-              alt="Atlas AI dashboard"
-              className="w-full rounded-lg"
-              loading="lazy"
-            />
-          </div>
-        </section>
-
-        {/* Takeaway */}
-        <p className="mb-12 rounded-2xl border border-blue-400/20 bg-blue-400/5 backdrop-blur p-5 text-sm leading-relaxed text-gray-300">
-          <span className="font-semibold text-blue-300">Takeaway:</span>{" "}
-          Modern AI systems are fundamentally constrained by memory behavior,
-          communication overhead, inference latency, and observability — not just model architecture.
-        </p>
-
-        {/* Tech */}
-        <section className="rounded-2xl border border-blue-400/20 bg-blue-400/5 backdrop-blur p-6">
-          <h2 className="mb-4 text-2xl font-semibold">Technical Stack</h2>
-
-          <p className="text-blue-300">
-            Python · Transformers · FastAPI · Distributed Systems · Observability
-          </p>
-        </section>
-
-      </div>
-    </main>
+    <CaseStudyShell
+      identifier="PROJECT 01 · ML INFRASTRUCTURE"
+      title="Atlas AI"
+      updated="May 2026"
+      introduction="Built a distributed AI infrastructure platform for transformer systems, distributed training behavior, inference optimization, observability, and performance engineering under real systems constraints."
+      links={repositoryLink}
+      showBackLink={false}
+      tabs={[
+        { id: "overview", label: "Overview", content: <div><PanelCard title="Problem"><p>Modern AI systems are constrained not only by model quality, but by communication overhead, memory scaling, inference latency, synchronization cost, and observability limitations.</p></PanelCard><section className="atlas-technical-highlights" aria-labelledby="atlas-technical-highlights-title"><h2 id="atlas-technical-highlights-title" className="text-lg font-semibold">Technical Highlights</h2><p className="atlas-technology-list">Python · Transformers · FastAPI · Distributed Systems · Observability</p><ul><li>Transformer infrastructure and KV-cache systems</li><li>Distributed runtime and communication profiling</li><li>Serving, observability, and benchmark automation</li></ul></section><Link href="/projects" className="case-study-back atlas-overview-back">← Back to Selected Projects</Link></div> },
+        { id: "design", label: "System Design", content: <PanelCard title="System Design"><ul><li>Reverse-mode autograd and optimizer infrastructure</li><li>Transformer runtime with KV cache and streaming generation</li><li>Distributed multiprocessing runtime with communication profiling</li><li>FastAPI inference server with observability endpoints</li><li>Benchmark automation and regression-detection workflows</li></ul></PanelCard> },
+        { id: "architecture", label: "Architecture", content: <section className="atlas-architecture-panel" aria-labelledby="atlas-architecture-title"><h2 id="atlas-architecture-title" className="text-xl font-semibold">Architecture</h2><p>Atlas AI integrates training infrastructure, transformer systems, distributed runtimes, serving, and observability into one ML systems platform.</p><Image src="/images/atlas-architecture.png" alt="Atlas AI training, transformer, serving, and observability architecture" width="1536" height="1024" className="atlas-architecture-image" sizes="(min-width: 1280px) 1100px, calc(100vw - 4rem)" /></section> },
+        { id: "results", label: "Results", content: <div className="case-panel-grid atlas-natural-grid"><PanelCard title="Results and Insights"><ul><li>Throughput degraded as autoregressive sequence length increased.</li><li>Communication profiling exposed distributed-runtime bottlenecks.</li><li>KV-cache growth materially affected transformer memory behavior.</li><li>Streaming generation reduced perceived inference latency.</li><li>Benchmark automation enabled regression-oriented validation.</li></ul></PanelCard><PanelCard title="Takeaway"><p>Modern AI systems are constrained by memory behavior, communication overhead, inference latency, and observability—not only model architecture.</p></PanelCard></div> },
+        { id: "benchmarks", label: "Benchmarks", content: <div className="case-panel-grid atlas-natural-grid"><PanelCard title="Transformer Benchmark"><p>Generation throughput decreases as token count increases, revealing inference-scaling and KV-cache effects.</p><img src="/images/transformer_generation_benchmark.png" alt="Atlas AI transformer generation throughput benchmark" width="800" height="500" className="case-study-image mt-4" loading="lazy" /></PanelCard><PanelCard title="Serving and Observability"><img src="/images/dashboard-api.png" alt="Atlas AI serving and observability dashboard" width="1536" height="1024" className="case-study-image" loading="lazy" /></PanelCard></div> },
+      ]}
+    />
   );
 }

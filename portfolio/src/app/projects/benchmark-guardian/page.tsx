@@ -1,158 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import CaseStudyShell, { PanelCard } from "@/components/CaseStudyShell";
+
+const description = "Evidence-backed performance repair system that detects benchmark regressions, creates bounded Codex repair goals, and verifies fixes through protected benchmark evidence.";
+
+export const metadata: Metadata = {
+  title: "Codex Benchmark Guardian", description,
+  alternates: { canonical: "/projects/benchmark-guardian" },
+  openGraph: { title: "Codex Benchmark Guardian", description, url: "/projects/benchmark-guardian", type: "article" },
+  twitter: { card: "summary", title: "Codex Benchmark Guardian", description },
+};
+
+const jsonLd = { "@context": "https://schema.org", "@type": "SoftwareSourceCode", name: "Codex Benchmark Guardian", description, codeRepository: "https://github.com/OmprakashSahani/codex-benchmark-guardian", url: "https://ml-systems-portfolio.vercel.app/projects/benchmark-guardian", author: { "@type": "Person", name: "Omprakash Sahani" }, programmingLanguage: ["Python", "TypeScript"] };
 
 export default function BenchmarkGuardianPage() {
-  return (
-    <main className="relative min-h-screen bg-[#0b0f1a] text-white px-6 py-20 overflow-hidden">
-
-      {/* Background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293730_1px,transparent_1px),linear-gradient(to_bottom,#1f293730_1px,transparent_1px)] bg-[size:40px_40px]" />
-
-      <div className="relative z-10 mx-auto max-w-4xl">
-
-        <Link
-          href="/"
-          className="mb-10 inline-block text-sm text-blue-400 hover:text-blue-300 transition"
-        >
-          ← Back to home
-        </Link>
-
-        <p className="mb-4 text-sm uppercase tracking-[0.25em] text-blue-400">
-          Project Case Study
-        </p>
-
-        <h1 className="mb-2 text-4xl font-bold md:text-5xl">
-          Benchmark Guardian
-        </h1>
-
-        <p className="mb-6 text-xs text-gray-500">
-          Updated: May 2026
-        </p>
-
-        <a
-          href="https://github.com/OmprakashSahani/benchmark-guardian"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mb-6 inline-block text-sm text-blue-400 hover:text-blue-300 underline-offset-4 hover:underline transition"
-        >
-          View Repository →
-        </a>
-
-        {/* Intro */}
-        <p className="mb-12 max-w-3xl text-lg leading-relaxed text-gray-400">
-          Built a developer infrastructure platform for automated benchmark regression
-          detection, multi-metric performance analysis, and GitHub pull request feedback.
-        </p>
-
-        {/* Highlights */}
-        <ul className="mb-12 flex flex-wrap gap-4 text-sm text-blue-400">
-          <li>• GitHub App + webhook integration</li>
-          <li>• Multi-metric regression detection engine</li>
-          <li>• Automated PR feedback workflows</li>
-        </ul>
-
-        {/* Problem */}
-        <section className="mb-12 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6">
-          <h2 className="mb-4 text-2xl font-semibold">Problem</h2>
-
-          <p className="text-gray-400 leading-relaxed">
-            Performance regressions in ML infrastructure and backend systems are often
-            difficult to detect during code review. Latency, memory usage, throughput,
-            and scaling efficiency can silently degrade without failing tests.
-          </p>
-        </section>
-
-        {/* System Design */}
-        <section className="mb-12 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6">
-          <h2 className="mb-4 text-2xl font-semibold">System Design</h2>
-
-          <ul className="space-y-3 text-gray-400">
-            <li>• GitHub App + webhook-driven architecture</li>
-            <li>• Secure webhook signature verification</li>
-            <li>• Multi-metric benchmark comparison engine</li>
-            <li>• Severity classification and regression detection</li>
-            <li>• Automated PR comment generation</li>
-            <li>• SQLite persistence layer for benchmark storage</li>
-          </ul>
-        </section>
-
-        {/* Architecture */}
-        <section className="mb-12">
-          <h2 className="mb-4 text-2xl font-semibold">Architecture</h2>
-
-          <p className="mb-6 text-gray-400">
-            Event-driven backend architecture that processes GitHub pull request events,
-            analyzes benchmark regressions, and publishes automated developer feedback.
-          </p>
-
-          <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur p-4">
-            <img
-              src="/images/benchmark-guardian-architecture.png"
-              alt="Benchmark Guardian architecture"
-              className="w-full rounded-lg"
-              loading="lazy"
-            />
-          </div>
-        </section>
-
-        {/* Demo */}
-        <section className="mb-12">
-          <h2 className="mb-4 text-2xl font-semibold">Live GitHub Integration</h2>
-
-          <p className="mb-6 text-gray-400">
-            Benchmark Guardian automatically analyzes pull request benchmarks
-            and posts regression reports directly into GitHub discussions.
-          </p>
-
-          <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur p-4">
-            <img
-              src="/images/pr-comment-demo.png"
-              alt="Benchmark Guardian PR comment demo"
-              className="w-full rounded-lg"
-              loading="lazy"
-            />
-          </div>
-        </section>
-
-        {/* Results */}
-        <section className="mb-12 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6">
-          <h2 className="mb-4 text-2xl font-semibold">Results & Insights</h2>
-
-          <ul className="space-y-3 text-gray-400">
-            <li>• Automated detection of latency, memory, and throughput regressions</li>
-            <li>• Enabled benchmark feedback directly within pull request workflows</li>
-            <li>• Classified regression severity across multiple performance dimensions</li>
-            <li>• Demonstrated infrastructure-oriented performance observability workflows</li>
-          </ul>
-        </section>
-
-        {/* Example Output */}
-        <section className="mb-12">
-          <h2 className="mb-4 text-2xl font-semibold">Example Benchmark Report</h2>
-
-          <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur p-4 text-sm text-gray-300">
-            <pre>{`latency_ms:  +18%  → HIGH regression
-memory_mb:   +22%  → HIGH regression
-throughput:   -8%  → MEDIUM regression`}</pre>
-          </div>
-        </section>
-
-        {/* Takeaway */}
-        <p className="mb-12 rounded-2xl border border-blue-400/20 bg-blue-400/5 backdrop-blur p-5 text-sm leading-relaxed text-gray-300">
-          <span className="font-semibold text-blue-300">Takeaway:</span>{" "}
-          Performance regressions in ML infrastructure require automated,
-          systems-aware analysis integrated directly into developer workflows.
-        </p>
-
-        {/* Tech */}
-        <section className="rounded-2xl border border-blue-400/20 bg-blue-400/5 backdrop-blur p-6">
-          <h2 className="mb-4 text-2xl font-semibold">Technical Stack</h2>
-
-          <p className="text-blue-300">
-            Python · FastAPI · GitHub Apps · Webhooks · SQLite · Performance Analysis
-          </p>
-        </section>
-
-      </div>
-    </main>
-  );
+  return <CaseStudyShell identifier="PROJECT 02 · PERFORMANCE REPAIR" title="Codex Benchmark Guardian" updated="July 2026" introduction="Built an evidence-backed performance repair system that turns benchmark regressions into bounded Codex repair tasks, verifies proposed fixes against protected benchmark evidence, and leaves final merge approval to a human." structuredData={jsonLd} links={<><a href="https://codex-benchmark-guardian.vercel.app/" target="_blank" rel="noopener noreferrer">Live Application →</a><a href="https://github.com/OmprakashSahani/codex-benchmark-guardian" target="_blank" rel="noopener noreferrer">GitHub Repository →</a><a href="https://github.com/OmprakashSahani/codex-benchmark-guardian/pull/20" target="_blank" rel="noopener noreferrer">View Real PR Proof →</a></>} showBackLink={false} tabs={[
+    { id: "overview", label: "Overview", content: <div><PanelCard title="Problem"><p>Performance regressions are difficult to repair safely when benchmark direction, thresholds, repair scope, and verification evidence are implicit or mutable.</p></PanelCard><section className="atlas-technical-highlights" aria-labelledby="guardian-technical-highlights-title"><h2 id="guardian-technical-highlights-title" className="text-lg font-semibold">Technical Highlights</h2><p className="atlas-technology-list">Python · FastAPI · Next.js · TypeScript · Streamlit · GitHub Actions</p><ul><li>Deterministic regression triage</li><li>Protected repair verification</li><li>Human approval before merge</li></ul></section><Link href="/projects" className="case-study-back atlas-overview-back">← Back to Selected Projects</Link></div> },
+    { id: "design", label: "System Design", content: <PanelCard title="System Design"><ul><li>Compares baseline and current benchmarks across higher-is-worse and lower-is-worse metrics.</li><li>Applies configurable thresholds, severity classification, and release-readiness scoring.</li><li>Produces deterministic triage and an immutable Repair Contract.</li><li>Creates a Conditional Codex Goal for repair-required or verification-only paths.</li><li>Re-runs a protected benchmark harness and evaluator before reporting readiness.</li></ul></PanelCard> },
+    { id: "architecture", label: "Architecture", content: <section className="atlas-architecture-panel" aria-labelledby="guardian-architecture-title"><h2 id="guardian-architecture-title" className="text-xl font-semibold">Architecture</h2><p>A Python CLI, FastAPI service, Next.js dashboard, and Streamlit interface share a protected evaluator while keeping repair execution separate from trusted evidence.</p><img src="/images/benchmark-guardian-architecture.png" alt="Codex Benchmark Guardian repair and verification architecture" width="1536" height="1024" className="atlas-architecture-image" loading="lazy" /></section> },
+    { id: "pr-evidence", label: "PR #20 Evidence", content: <div className="case-panel-grid atlas-natural-grid"><PanelCard title="Initial Regression"><ul><li>Metric: <code>pr_gate_generation_latency_ms</code></li><li>Harmful change: +135.21%</li><li>Protected threshold: 25%</li><li>Critical severity · Needs Review · 70/100</li></ul></PanelCard><PanelCard title="Protected Verification"><ul><li>Verified result: zero material regressions</li><li>Final readiness: Ready</li><li>Final score: 100/100</li></ul></PanelCard></div> },
+    { id: "results", label: "Results", content: <div className="case-panel-grid atlas-natural-grid"><PanelCard title="Results and Insights"><ul><li>Explicit metric direction and thresholds make classification deterministic.</li><li>Immutable repair contracts keep generated work bounded and auditable.</li><li>Protected verification separates repair claims from trusted evidence.</li><li>Readiness scoring communicates risk without replacing human approval.</li></ul></PanelCard><PanelCard title="Takeaway"><p>Performance repair automation is trustworthy only when goals are bounded, evidence is protected, and final approval remains human-controlled.</p></PanelCard></div> },
+  ]} />;
 }
