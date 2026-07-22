@@ -33,18 +33,18 @@ export default function ProjectsPage() {
   };
 
   return (
-    <main id="main-content" className="portfolio-page relative min-h-screen overflow-hidden bg-[#0b0f1a] px-6 text-white">
+    <div className="portfolio-page relative min-h-screen overflow-hidden bg-[#0b0f1a] px-6 text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <div className="background-grid absolute inset-0" />
       <SiteHeader />
-      <section aria-labelledby="projects-heading" className="relative z-10 mx-auto max-w-6xl pb-20 pt-9 md:pt-10">
+      <main id="main-content" aria-labelledby="projects-heading" className="relative z-10 mx-auto max-w-6xl pb-20 pt-9 md:pt-10">
         <div className="mx-auto mb-10 max-w-[720px] text-center">
           <h1 id="projects-heading" className="text-3xl font-semibold md:text-4xl">Selected Projects</h1>
           <p className="mt-4 text-base leading-relaxed text-gray-400">ML systems projects spanning infrastructure, performance engineering, distributed training, search evaluation, and reproducible tooling.</p>
         </div>
         <ProjectGrid />
-      </section>
+      </main>
       <SiteFooter />
-    </main>
+    </div>
   );
 }

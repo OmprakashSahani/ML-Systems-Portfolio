@@ -12,7 +12,7 @@ export default function Home() {
   };
 
   return (
-    <main id="main-content" className="portfolio-page relative flex min-h-[100svh] flex-col overflow-hidden bg-[#0b0f1a] px-6 text-white">
+    <div className="portfolio-page relative flex min-h-[100svh] flex-col overflow-hidden bg-[#0b0f1a] px-6 text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <div className="background-grid absolute inset-0" />
 
@@ -25,7 +25,7 @@ export default function Home() {
 
       <SiteHeader />
 
-      <section aria-labelledby="hero-heading" className="relative z-10 flex flex-1 items-center justify-center py-12 md:py-16">
+      <main id="main-content" aria-labelledby="hero-heading" className="relative z-10 flex flex-1 items-center justify-center py-12 md:py-16">
         <div className="max-w-[820px] translate-y-5 animate-[fadeIn_1s_ease-out] text-center md:translate-y-10">
           <p className="mb-3 text-sm uppercase tracking-[0.3em] text-blue-400">Distributed ML · Optimization · Systems</p>
           <h1 id="hero-heading" className="mb-5 text-5xl font-bold tracking-tight md:text-7xl">Omprakash Sahani</h1>
@@ -37,9 +37,9 @@ export default function Home() {
             <a href="/Omprakash_Sahani_Resume.pdf" download="Omprakash_Sahani_Resume.pdf" className="rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-gray-300 transition hover:border-blue-400 hover:text-blue-300">Download Resume</a>
           </div>
         </div>
-      </section>
+      </main>
 
       <SiteFooter />
-    </main>
+    </div>
   );
 }
