@@ -1,10 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 
-export default function ContactButton() {
+type ContactButtonProps = {
+  iconOnly?: boolean;
+  label?: string;
+};
+
+export default function ContactButton({ iconOnly = false, label = "Contact" }: ContactButtonProps) {
   const [showEmail, setShowEmail] = useState(false);
   const [copied, setCopied] = useState(false);
+  const detailsId = useId();
 
   const email = "Omprakash.Sahani1206@gmail.com";
 
@@ -22,28 +28,39 @@ export default function ContactButton() {
     <div className="relative">
       {/* Contact button */}
       <button
+        type="button"
+        aria-expanded={showEmail}
+        aria-controls={detailsId}
         onClick={() => {
           setShowEmail(!showEmail);
           setCopied(false);
         }}
-        className="font-semibold text-blue-400 hover:text-blue-300 transition"
+        aria-label={iconOnly ? "Email Omprakash Sahani" : undefined}
+        title={iconOnly ? "Email" : undefined}
+        className={iconOnly ? "utility-link contact-icon-button" : "font-semibold text-blue-400 hover:text-blue-300 transition"}
       >
-        Contact
+        {iconOnly ? (
+          <svg className="social-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" />
+          </svg>
+        ) : label}
       </button>
 
       {/* Floating dropdown */}
       {showEmail && (
-        <div className="absolute right-0 top-full mt-3 w-max rounded-xl border border-white/10 bg-[#0b0f1a]/90 backdrop-blur px-4 py-3 text-sm text-gray-300 shadow-lg">
+        <div id={detailsId} className="contact-popover absolute right-0 top-full z-30 mt-3 w-max rounded-xl border border-white/10 px-4 py-3 text-sm text-gray-300 shadow-lg">
 
           <p className="text-xs text-gray-500 mb-1 tracking-wide">
             EMAIL
           </p>
 
-          <p className="text-sm font-medium text-gray-200 mb-2">
+          <a href={`mailto:${email}`} className="block text-sm font-medium text-gray-200 mb-2 hover:text-blue-300">
             {email}
-          </p>
+          </a>
 
           <button
+            type="button"
             onClick={handleCopy}
             className="text-xs text-blue-400 hover:text-blue-300 transition"
           >

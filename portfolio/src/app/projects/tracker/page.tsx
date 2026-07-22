@@ -1,119 +1,15 @@
 import Link from "next/link";
+import CaseStudyShell, { PanelCard } from "@/components/CaseStudyShell";
+import { projectMetadata } from "@/lib/metadata";
+
+export const metadata = projectMetadata("ML Experiment Tracker", "CLI-based experiment tracking for structured run logging, reproducibility, and metric comparison.", "/projects/tracker");
 
 export default function TrackerPage() {
-  return (
-    <main className="relative min-h-screen bg-[#0b0f1a] text-white px-6 py-20 overflow-hidden">
-
-      {/* Background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293730_1px,transparent_1px),linear-gradient(to_bottom,#1f293730_1px,transparent_1px)] bg-[size:40px_40px]" />
-
-      <div className="relative z-10 mx-auto max-w-4xl">
-
-        {/* Back */}
-        <Link href="/" className="mb-10 inline-block text-sm text-blue-400 hover:text-blue-300">
-          ← Back to home
-        </Link>
-
-        {/* Header */}
-        <p className="mb-4 text-sm uppercase tracking-[0.25em] text-blue-400">
-          Project Case Study
-        </p>
-
-        <h1 className="mb-2 text-4xl font-bold md:text-5xl">
-          ML Experiment Tracker
-        </h1>
-
-        <p className="mb-6 text-xs text-gray-500">
-          Updated: May 2026
-        </p>
-
-        <a
-          href="https://github.com/OmprakashSahani/ML-Experiment-Tracker"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mb-6 inline-block text-sm text-blue-400 hover:text-blue-300 underline-offset-4 hover:underline transition"
-        >
-          View Repository →
-        </a>
-
-        {/* Intro */}
-        <p className="mb-12 max-w-3xl text-lg leading-relaxed text-gray-400">
-          Built a CLI-based experiment tracking system to support reproducible ML workflows,
-          enabling structured run logging, metric comparison, and evaluation across experiments.
-        </p>
-
-        <ul className="mb-12 flex flex-wrap gap-4 text-sm text-blue-400">
-          <li>• Reproducible experiment runs (timestamped)</li>
-          <li>• Structured metric logging & comparison</li>
-          <li>• CLI-driven workflow for ML experimentation</li>
-        </ul>
-
-        {/* Problem */}
-        <section className="mb-12 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6">
-          <h2 className="mb-4 text-2xl font-semibold">Problem</h2>
-          <p className="text-gray-400 leading-relaxed">
-            Managing machine learning experiments becomes difficult as runs increase.
-            Without proper tracking, it is hard to reproduce results, compare configurations,
-            and identify the best-performing models.
-          </p>
-        </section>
-
-        {/* System Design */}
-        <section className="mb-12 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6">
-          <h2 className="mb-4 text-2xl font-semibold">System Design</h2>
-          <ul className="space-y-3 text-gray-400">
-            <li>• CLI interface for experiment management</li>
-            <li>• Local JSON-based storage for runs and metadata</li>
-            <li>• Timestamped run creation for reproducibility</li>
-            <li>• Metric logging and structured comparison</li>
-          </ul>
-        </section>
-
-        {/* Workflow */}
-        <section className="mb-12 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6">
-          <h2 className="mb-4 text-2xl font-semibold">Workflow</h2>
-          <p className="text-gray-400">
-            Issue → Branch → Code → Test → PR → CI → Merge → Release
-          </p>
-        </section>
-
-        {/* Results & Insights */}
-        <section className="mb-12 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6">
-          <h2 className="mb-4 text-2xl font-semibold">Results & Insights</h2>
-          <ul className="space-y-3 text-gray-400">
-            <li>• Enabled reproducible experiment tracking using structured JSON storage</li>
-            <li>• Simplified comparison of model performance across runs</li>
-            <li>• Identified differences in accuracy and loss between baseline and tuned runs</li>
-            <li>• Improved workflow clarity through CLI-based interaction</li>
-          </ul>
-        </section>
-
-        {/* Example Output */}
-        <section className="mb-12">
-          <h2 className="mb-4 text-2xl font-semibold">Example Output</h2>
-
-          <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur p-4 text-sm text-gray-300">
-            <pre>
-{`- baseline | accuracy=0.95, loss=0.42
-- tuned    | accuracy=0.97, loss=0.36`}
-            </pre>
-          </div>
-        </section>
-
-        <p className="mb-12 rounded-2xl border border-blue-400/20 bg-blue-400/5 backdrop-blur p-5 text-sm leading-relaxed text-gray-300">
-          <span className="font-semibold text-blue-300">Takeaway:</span>{" "}
-            Effective ML experimentation requires structured tracking, reproducible runs, and reliable metric comparison across configurations.
-        </p>
-
-        {/* Tech */}
-        <section className="rounded-2xl border border-blue-400/20 bg-blue-400/5 backdrop-blur p-6">
-          <h2 className="mb-4 text-2xl font-semibold">Technical Stack</h2>
-          <p className="text-blue-300">
-            Python · CLI · JSON Storage · PyTest · CI/CD
-          </p>
-        </section>
-
-      </div>
-    </main>
-  );
+  return <CaseStudyShell identifier="PROJECT 08 · EXPERIMENT TRACKING" title="ML Experiment Tracker" updated="May 2026" introduction="Built a CLI-based experiment tracking system for reproducible ML workflows, structured run logging, metric comparison, and evaluation across experiments." links={<a href="https://github.com/OmprakashSahani/ML-Experiment-Tracker" target="_blank" rel="noopener noreferrer">View Repository →</a>} showBackLink={false} tabs={[
+    { id: "overview", label: "Overview", content: <div><PanelCard title="Problem"><p>As experiment counts grow, unstructured records make it difficult to reproduce results, compare configurations, and select the strongest run.</p></PanelCard><section className="atlas-technical-highlights" aria-labelledby="tracker-technical-highlights-title"><h2 id="tracker-technical-highlights-title" className="text-lg font-semibold">Technical Highlights</h2><p className="atlas-technology-list">Python · CLI · JSON Storage · PyTest · CI/CD</p><ul><li>Timestamped, reproducible experiment runs</li><li>Structured metric logging and comparison</li><li>CLI-driven experimentation workflow</li></ul></section><Link href="/projects" className="case-study-back atlas-overview-back">← Back to Selected Projects</Link></div> },
+    { id: "design", label: "System Design", content: <PanelCard title="System Design"><ul><li>CLI interface for experiment management</li><li>Local JSON storage for runs and metadata</li><li>Timestamped run creation for reproducibility</li><li>Structured metric logging and comparison</li></ul></PanelCard> },
+    { id: "workflow", label: "Workflow", content: <PanelCard title="Workflow"><p>Create Run → Record Configuration → Log Metrics → Persist Results → Compare Runs → Select Best Result</p></PanelCard> },
+    { id: "results", label: "Results", content: <div><div className="case-panel-grid atlas-natural-grid"><PanelCard title="Results and Insights"><ul><li>Enabled reproducible tracking through structured JSON storage.</li><li>Simplified model-performance comparison across runs.</li><li>Exposed accuracy and loss differences between baseline and tuned runs.</li><li>Improved workflow clarity through CLI interaction.</li></ul></PanelCard><PanelCard title="Example Output"><pre>{`- baseline | accuracy=0.95, loss=0.42
+- tuned    | accuracy=0.97, loss=0.36`}</pre></PanelCard></div><div className="mt-4"><PanelCard title="Takeaway"><p>Effective ML experimentation requires structured tracking, reproducible runs, and reliable metric comparison across configurations.</p></PanelCard></div></div> },
+  ]} />;
 }
