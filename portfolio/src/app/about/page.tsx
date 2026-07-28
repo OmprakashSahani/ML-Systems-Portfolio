@@ -89,7 +89,7 @@ export default function AboutPage() {
           </div>
 
           <aside className="order-1 mx-auto w-full max-w-[300px] min-w-0 md:order-2 md:max-w-[320px]" aria-label="Profile details">
-            <Image src="/about/omprakash-sahani.png" alt="Portrait of Omprakash Sahani" width={1254} height={1254} sizes="(max-width: 767px) 300px, (max-width: 1023px) 30vw, 320px" className="h-auto w-full rounded-xl border border-white/10" priority />
+            <Image src="/about/omprakash-sahani.png" alt="Portrait of Omprakash Sahani" width={1254} height={1254} sizes="(max-width: 767px) 300px, (max-width: 1023px) 30vw, 320px" className="h-auto w-full rounded-xl border border-white/10" preload />
             <div className="mt-4 border-l border-blue-400/30 pl-4 text-sm leading-relaxed text-gray-500">
               <p>Kolhapur, Maharashtra, India</p>
               <p>Open to full-time opportunities</p>
