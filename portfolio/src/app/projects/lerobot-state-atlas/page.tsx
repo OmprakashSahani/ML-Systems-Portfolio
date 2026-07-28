@@ -109,7 +109,7 @@ export default function LeRobotStateAtlasPage() {
           content: (
             <div className="case-panel-grid atlas-natural-grid">
               <PanelCard title="Processing Flow">
-                <ol className="grid gap-2">
+                <ol className="grid list-decimal gap-2 pl-5">
                   <li>Inspect LeRobot metadata, including state components and native FPS.</li>
                   <li>Resolve the requested dataset revision to a full immutable commit SHA.</li>
                   <li>Load selected episode states with the resolved revision pinned.</li>
