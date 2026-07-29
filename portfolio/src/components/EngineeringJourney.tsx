@@ -85,6 +85,7 @@ export default function EngineeringJourney() {
   const typingGeneration=useRef(0);
   const programmatic=useRef(false);
   const hiddenRunning=useRef(false);
+  const sceneVisibility=useRef(new Map<Element,number>());
   const paused=status==="paused"||reducedMotion;
 
   const pause=useCallback(()=>setStatus(s=>s==="running"?"paused":s),[]);
@@ -105,7 +106,42 @@ export default function EngineeringJourney() {
   const restart=()=>{typingGeneration.current+=1;setActiveScene(1);setTerminalScene(1);setHistory([]);setTyping("");setReset(v=>v+1);setStatus(reducedMotion?"idle":"running");scrollTo(1,true);};
 
   useEffect(()=>{const media=matchMedia("(prefers-reduced-motion: reduce)");const update=()=>{setReducedMotion(media.matches);if(media.matches)setStatus("idle");};update();media.addEventListener("change",update);return()=>media.removeEventListener("change",update);},[]);
-  useEffect(()=>{const observer=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(visible)setActiveScene(Number((visible.target as HTMLElement).dataset.journeyScene));},{rootMargin:"-20% 0px -30% 0px",threshold:[.15,.4,.65]});refs.current.forEach(r=>r&&observer.observe(r));return()=>observer.disconnect();},[]);
+  useEffect(()=>{
+    const visibility=sceneVisibility.current;
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        visibility.set(
+          entry.target,
+          entry.isIntersecting ? entry.intersectionRatio : 0,
+        );
+      });
+
+      const visible=refs.current
+        .filter((target):target is HTMLElement=>target!==null)
+        .map(target=>({
+          target,
+          ratio:visibility.get(target)??0,
+        }))
+        .filter(({ratio})=>ratio>0)
+        .sort((a,b)=>b.ratio-a.ratio)[0];
+
+      if(visible){
+        setActiveScene(Number(visible.target.dataset.journeyScene));
+      }
+    },{
+      rootMargin:"-20% 0px -30% 0px",
+      threshold:[.15,.4,.65],
+    });
+
+    refs.current.forEach(target=>{
+      if(target)observer.observe(target);
+    });
+
+    return()=>{
+      observer.disconnect();
+      visibility.clear();
+    };
+  },[]);
   useEffect(()=>{if(status!=="running"||reducedMotion)return;const timer=window.setTimeout(()=>{if(activeScene<6){const next=activeScene+1;setActiveScene(next);scrollTo(next);}else skip();},durations[activeScene-1]??0);return()=>clearTimeout(timer);},[activeScene,reducedMotion,scrollTo,skip,status]);
   useEffect(()=>{const interrupt=(e:Event)=>{if(status!=="running")return;if(e instanceof KeyboardEvent&&!["ArrowDown","ArrowUp","PageDown","PageUp","Home","End"," ","Escape"].includes(e.key))return;pause();};window.addEventListener("wheel",interrupt,{passive:true});window.addEventListener("touchstart",interrupt,{passive:true});window.addEventListener("pointerdown",interrupt,{passive:true});window.addEventListener("keydown",interrupt);return()=>{window.removeEventListener("wheel",interrupt);window.removeEventListener("touchstart",interrupt);window.removeEventListener("pointerdown",interrupt);window.removeEventListener("keydown",interrupt);};},[pause,status]);
   useEffect(()=>{const visibility=()=>{if(document.hidden){hiddenRunning.current=status==="running";if(hiddenRunning.current)setStatus("paused");}else if(hiddenRunning.current&&!reducedMotion){hiddenRunning.current=false;setStatus("running");}};document.addEventListener("visibilitychange",visibility);return()=>document.removeEventListener("visibilitychange",visibility);},[reducedMotion,status]);
