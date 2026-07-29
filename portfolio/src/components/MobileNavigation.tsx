@@ -31,6 +31,7 @@ export default function MobileNavigation() {
       </button>
       {open && (
         <div id="mobile-menu" className="mobile-menu">
+          <Link href="/journey" aria-label="Engineering Story" aria-current={pathname === "/journey" ? "page" : undefined} className="mobile-menu-link font-semibold" onClick={() => setOpen(false)}>Engineering Story</Link>
           <Link href="/about" aria-label="About Omprakash Sahani" aria-current={pathname === "/about" ? "page" : undefined} className="mobile-menu-link" onClick={() => setOpen(false)}><UserIcon />About</Link>
           <a href="https://github.com/OmprakashSahani" target="_blank" rel="noopener noreferrer" aria-label="Omprakash Sahani on GitHub" title="GitHub" className="mobile-menu-link"><GitHubIcon />GitHub</a>
           <a href="https://www.linkedin.com/in/omprakashsahani/" target="_blank" rel="noopener noreferrer" aria-label="Omprakash Sahani on LinkedIn" title="LinkedIn" className="mobile-menu-link"><LinkedInIcon />LinkedIn</a>
