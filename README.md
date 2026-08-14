@@ -71,3 +71,10 @@ The deployed site includes detailed project case studies covering architecture, 
 cd portfolio
 npm install
 npm run dev
+```
+
+Then open:
+
+```text
+http://localhost:3000
+```
