@@ -1,11 +1,11 @@
 <div align="center">
 
-# ML Systems Portfolio
+# ML Systems Portfolio — Legacy
 
 ### Omprakash Sahani
 **ML Systems Engineer · Software Engineer · Distributed Systems**
 
-[Live Portfolio](https://ml-systems-portfolio.vercel.app/) ·
+[Current Portfolio Repository](https://github.com/OmprakashSahani/Krsna) ·
 [GitHub](https://github.com/OmprakashSahani) ·
 [LinkedIn](https://www.linkedin.com/in/omprakashsahani/)
 
@@ -15,7 +15,9 @@
 
 ## About
 
-This repository contains the source code for my engineering portfolio and technical case studies across ML systems, AI infrastructure, distributed systems, performance engineering, robotics data tooling, search evaluation, and reproducibility.
+This repository is retained as the legacy version of my previous engineering portfolio and its technical case studies across ML systems, AI infrastructure, distributed systems, performance engineering, robotics data tooling, search evaluation, and reproducibility.
+
+Current portfolio development has moved to [Krsna](https://github.com/OmprakashSahani/Krsna).
 
 I focus on understanding how systems behave in practice — how they scale, where they regress, how memory and communication affect performance, and how evaluation can be made more reproducible.
 
@@ -47,11 +49,9 @@ I focus on understanding how systems behave in practice — how they scale, wher
 
 ---
 
-## Live Portfolio
+## Repository Status
 
-The deployed site includes detailed project case studies covering architecture, implementation decisions, benchmarks, results, limitations, and technical evidence.
-
-**https://ml-systems-portfolio.vercel.app/**
+This repository is preserved for historical reference. New portfolio development continues in [Krsna](https://github.com/OmprakashSahani/Krsna).
 
 ---
 
